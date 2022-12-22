@@ -34,7 +34,7 @@ const Signup = () => {
             Create your account
           </p>
           <p className="text-sm mt-4 font-medium leading-none login__text">
-            Already have an account?
+            Already have an account? &nbsp;
             <span className="text-sm font-medium leading-none underline login__text cursor-pointer">
               <Link to="/login">Login Here</Link>
             </span>

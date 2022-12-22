@@ -1,24 +1,61 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import './loginSignup.css';
+import PulseLoader from 'react-spinners/PulseLoader';
 import leishi from '../../assets/images/leishi.png';
+import { useLoginUserMutation } from '../../RtkQuery/slices/authApi';
+import { setCredentials } from '../../RtkQuery/slices/authSlice';
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+
+  const [loginUser, { isLoading }] = useLoginUserMutation();
 
   const handleEmailInput = (e) => setEmail(e.target.value);
   const handlePasswordInput = (e) => setPassword(e.target.value);
 
+  useEffect(() => {
+    setErrMsg('');
+  }, [email, password]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({
-      user: {
-        email,
-        password,
-      },
-    });
+    try {
+      const { status } = await loginUser({
+        user: {
+          email,
+          password,
+        },
+      }).unwrap();
+      const userInfo = {
+        user: status.data,
+        token: status.token,
+        isLoggedIn: true,
+      };
+      dispatch(setCredentials(userInfo));
+      setEmail('');
+      setPassword('');
+      navigate('/');
+    } catch (error) {
+      if (!error) {
+        setErrMsg('No server response' || errMsg);
+      } else if (error.status === 400) {
+        setErrMsg('Invalid email or password');
+      } else if (error.status === 401) {
+        setErrMsg('Unauthorized');
+      } else {
+        setErrMsg(error.data?.message);
+      }
+    }
   };
+
+  if (isLoading) return <PulseLoader color="#f50057" size={30} />;
 
   const content = (
     <section className="signup__container">
@@ -31,7 +68,7 @@ const Login = () => {
             Login to your account
           </p>
           <p className="text-sm mt-4 font-medium leading-none login__text">
-            Don&apos;t have an account?
+            Don&apos;t have an account? &nbsp;
             <span className="text-sm font-medium leading-none underline login__text cursor-pointer">
               <Link to="/signup">Sign Up Here</Link>
             </span>
