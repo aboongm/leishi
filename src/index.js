@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { persistStore } from 'redux-persist';
 import { ToastContainer } from 'react-toastify';
 // import { store } from './RtkQuery/store';
-import App from './App';
+import App from './components/App';
 
 // const persistor = persistStore(store);
 
@@ -19,7 +19,7 @@ root.render(
     {/* <PersistGate loading={null} persistor={persistor}> */}
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/*" element={<App />} />
       </Routes>
     </BrowserRouter>
     <ToastContainer />

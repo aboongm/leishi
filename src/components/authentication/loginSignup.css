@@ -1,0 +1,27 @@
+.signup__container {
+  background: linear-gradient(45deg, #d6d6d6, transparent);
+  padding: 20px;
+  height: 100vh;
+}
+
+.signup__button {
+  width: 100%;
+  font-size: 1rem;
+  background-color: #2998d3;
+  color: #fff;
+  border: 1px solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: #0ca3f3 #3ba1d4 #0e699b;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.signup__button:hover {
+  background-color: #0e699b;
+  border-color: #0e699b #3ba1d4 #0ca3f3;
+}
+
+.header__logo {
+  width: 100px;
+}
