@@ -1,0 +1,232 @@
+.header {
+  height: 164px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.header__logo {
+  width: 100px;
+  object-fit: contain;
+  margin: 0 20px;
+  margin-top: 18px;
+}
+
+.header__search {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.header__select {
+  padding-left: 10px;
+  width: 100%;
+  height: 46px;
+  background-color: #fff;
+  border: 1px solid #d5d1d1;
+  outline: none;
+  margin-top: 6px;
+  border-radius: 4px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -moz-appearance: none;
+
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right;
+  -webkit-appearance: none;
+  background-position-x: 98%;
+}
+
+.header__select > option {
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+}
+
+.header__searchInput {
+  height: 46px;
+  padding: 10px 10px 10px 20px;
+  width: 100%;
+  border: 1px solid #d5d1d1;
+  outline: none;
+  border-radius: 22px;
+  margin: 0 6px;
+}
+
+.header__searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  width: 46px;
+  height: 46px;
+  background-color: #eaeaea;
+  border: 1px solid #eaeaea;
+  border-radius: 22px;
+}
+
+.header__optionLineOne {
+  font-size: 10px;
+}
+
+.header__optionLineTwo {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+  color: #0d8ed2;
+}
+
+.header__basketCount {
+  color: #f1f0f0;
+  border: 1px solid #e1dede;
+  width: 22px;
+  border-radius: 11px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: 17%;
+  top: -10px;
+  background-color: rgba(58, 83, 99, 0.65);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  right: 62px;
+  top: 16px;
+}
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #3a5363;
+}
+
+.hide__menu {
+  display: block;
+}
+
+.hide__item {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  right: 28px;
+  top: 18px;
+  z-index: 11;
+}
+
+.input {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.menu__modal {
+  position: fixed;
+  top: -17px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255 255 255 / 96%);
+  z-index: 10;
+  padding: 74px 30px;
+}
+
+.hide {
+  display: none;
+}
+
+.menu__modal__heading {
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.menu__modal__item {
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.menu__button__border {
+  border: 1px solid;
+  border-color: #54acd7 #2a7aa2 #185e81;
+}
+
+.menu__button {
+  background: #2b83b2;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #54acd7 #2a7aa2 #185e81;
+  color: #fff;
+  padding: 8px 12px;
+}
+
+@media (min-width: 640px) {
+  .menu__modal {
+    padding: 180px 222px;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide__menu {
+    display: none;
+  }
+
+  .hide__item {
+    display: flex;
+  }
+
+  .header {
+    height: 60px;
+    flex-direction: row;
+  }
+
+  .header__search {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .header__select {
+    width: 30%;
+    margin-top: 0;
+  }
+
+  .header__nav {
+    position: static;
+  }
+
+  .menu__modal {
+    padding: 180px 222px;
+  }
+}
