@@ -1,6 +1,7 @@
 import React from 'react';
 import './Category.css';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Category = ({ codeNumber, title, image }) => {
   const navigate = useNavigate();
@@ -10,13 +11,22 @@ const Category = ({ codeNumber, title, image }) => {
   };
 
   const content = (
-    <li className="category shadow-lg" onClick={handleNavigateProducts}>
+    <div
+      role="presentation"
+      className="category shadow-lg"
+      onClick={handleNavigateProducts}
+    >
       <h1 className="uppercase">{title}</h1>
       <img src={image} alt="" />
       <button type="button">Shop Now</button>
-    </li>
+    </div>
   );
   return content;
+};
+Category.propTypes = {
+  codeNumber: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Category;

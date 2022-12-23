@@ -15,7 +15,7 @@ import {
 import api from './slices/apiSlice';
 import authReducer from './slices/auth/authSlice';
 import { authApi } from './slices/auth/authApi';
-import { categorySlice } from './slices/home/categorySlice';
+import { categorySlice } from './slices/product_catalog/categorySlice';
 
 const persistConfig = {
   key: 'root',
