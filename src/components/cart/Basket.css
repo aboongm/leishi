@@ -1,0 +1,40 @@
+.checkout {
+  margin: 168px 0 0 0;
+  padding: 20px;
+}
+
+.checkout__ad {
+}
+
+.checkout__container {
+}
+
+.checkout__hello {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.checkout__title {
+  font-size: 17px;
+  font-weight: 800;
+  padding: 10px 0;
+  border-bottom: 1px solid #d5d1d1;
+  margin-bottom: 20px;
+}
+
+.checkout__left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+}
+
+@media (min-width: 769px) {
+}
+
+@media (min-width: 1024px) {
+}
