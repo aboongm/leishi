@@ -9,6 +9,7 @@ import RequireAuth from './auth/RequireAuth';
 import Payment from './payment/Payment';
 import Order from './order/Order';
 import Search from './sorting/Search';
+import AddProduct from './seller/AddProduct';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route element={<RequireAuth />}>
           <Route path="/payment" element={<Payment />} />
           <Route path="/orders" element={<Order />} />
+          <Route path="/addProduct" element={<AddProduct />} />
         </Route>
       </Route>
     </Routes>
