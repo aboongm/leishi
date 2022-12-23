@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './Basket.css';
 import BasketProduct from './BasketProduct';
+import Subtotal from './Subtotal';
 
 const Basket = () => {
   const user = useSelector((state) => state.auth);
@@ -30,7 +31,9 @@ const Basket = () => {
             />
           ))}
         </ul>
-        <div className="checkout__right">{/* <Subtotal /> */}</div>
+        <div className="checkout__right">
+          <Subtotal />
+        </div>
       </div>
     </div>
   );
