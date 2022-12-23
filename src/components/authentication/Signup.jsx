@@ -69,7 +69,7 @@ const Signup = () => {
         })
       );
     }
-  }, [isSuccess]);
+  }, [isSuccess, registerData, dispatch]);
   /* eslint-enable comma-dangle */
 
   if (isLoading) return <PulseLoader color="#f50057" size={30} />;

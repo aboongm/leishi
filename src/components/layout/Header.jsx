@@ -1,30 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Avatar } from '@mui/material';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import leishi from '../../assets/images/leishi.png';
 import './Header.css';
-import { useSendLogoutMutation } from '../../RtkQuery/slices/authApi';
+// import { useSendLogoutMutation } from '../../RtkQuery/slices/authApi';
+import { logOut } from '../../RtkQuery/slices/authSlice';
 
 const Header = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate;
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState('');
 
   const user = useSelector((state) => state.auth);
-  const [sendLogout, { isSuccess }] = useSendLogoutMutation();
+  // const [sendLogout, { isSuccess }] = useSendLogoutMutation();
 
   const handleSearch = (e) => {
     e.preventDefault();
   };
 
-  useEffect(() => {
-    if (isSuccess) {
-      navigate('/');
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     navigate('/');
+  //   }
+  // }, [isSuccess, navigate]);
+
+  const handleAuthentication = () => {
+    if (user.user) {
+      dispatch(logOut());
+      navigate('/login');
+    } else if (!user.user) {
+      navigate('/login');
     }
-  }, [isSuccess, navigate]);
+  };
 
   const content = (
     <nav className="2xl:container 2xl:mx-auto w-full bg-white">
@@ -72,7 +83,7 @@ const Header = () => {
               <div
                 role="presentation"
                 className="header__option hide__item"
-                onClick={sendLogout}
+                onClick={handleAuthentication}
               >
                 <span className="header__optionLineOne">
                   Hello
@@ -192,7 +203,7 @@ const Header = () => {
           {user.isLoggedIn ? (
             <button
               type="button"
-              onClick={sendLogout}
+              onClick={handleAuthentication}
               className="rounded-md flex space-x-2 w-full h-12 font-normal text-base leading-3 text-cyan-900 bg-cyan-900 bg-opacity-0 hover:opacity-100 duration-100 border border-cyan-900 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center"
             >
               Sign Out
