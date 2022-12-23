@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer__container">
         <div className="footer__left">
           <p className="footer__title">Get to Know Us</p>
-          <p className="footer__link">About Monaaz</p>
+          <p className="footer__link">About Lei Shi</p>
           <p className="footer__link">Careers</p>
           <p className="footer__link">Blog</p>
           <p className="footer__link">Sustainability</p>
@@ -19,12 +19,12 @@ const Footer = () => {
         </div>
         <div className="footer__center">
           <p className="footer__title">Make Money with Us</p>
-          <p className="footer__link">Sell products on Monaaz</p>
-          <p className="footer__link">Sell apps on Monaaz</p>
+          <p className="footer__link">Sell products on Lei Shi</p>
+          <p className="footer__link">Sell apps on Lei Shi</p>
           <p className="footer__link">Become an Affiliate</p>
           <p className="footer__link">Advertise Your Products</p>
           <p className="footer__link">Self-Publish with Us</p>
-          <p className="footer__link">Host an Monaaz Hub</p>
+          <p className="footer__link">Host an Lei Shi Hub</p>
           <p className="footer__link">See More Make Money with Us</p>
         </div>
         <div className="footer__right">
@@ -40,7 +40,7 @@ const Footer = () => {
           <p className="footer__complaint">
             Should you encounter any bugs, glitches, lack of functionality,
             delayed deliveries, billing errors or other problems on the website,
-            please email us on cs@monaaz.com
+            please email us on cs@Lei Shi.com
           </p>
           <p className="footer__title">Download Our App</p>
           <div className="footer__store">
@@ -51,7 +51,7 @@ const Footer = () => {
       </div>
 
       <p className="footer__copyright">
-        © 2022 All rights reserved. Monaaz LLP
+        © 2022 All rights reserved. Lei Shi LLP
       </p>
     </div>
   );

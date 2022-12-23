@@ -7,29 +7,31 @@ import Category from './Category';
 import { useGetCategoriesQuery } from '../../RtkQuery/slices/product_catalog/categorySlice';
 
 const Home = () => {
-  const { data, isLoading } = useGetCategoriesQuery();
+  const { data, isLoading, isSuccess } = useGetCategoriesQuery();
 
-  if (isLoading) return <PulseLoader color="#f50057" size={30} />;
+  let content;
+  if (isLoading) content = <PulseLoader color="#f50057" size={30} />;
 
-  const content = (
-    <div className="home">
-      <Link to="/products">
-        <img className="home__image" src={banner} alt="banner" />
-      </Link>
-      <ul className="home__row">
-        {data.map((category) => (
-          <li key={category.id} className="category shadow-lg">
-            <Category
-              codeNumber={category.code_number}
-              title={category.title}
-              image={category.image}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
+  if (isSuccess) {
+    content = (
+      <div className="home">
+        <Link to="/">
+          <img className="home__image" src={banner} alt="banner" />
+        </Link>
+        <ul className="home__row">
+          {data.map((category) => (
+            <li key={category.id} className="category shadow-lg">
+              <Category
+                codeNumber={category.code_number}
+                title={category.title}
+                image={category.image}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
   return content;
 };
 

@@ -21,7 +21,7 @@ import basketReducer from './slices/cart/basketSlice';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'basket'],
 };
 
 export const rootReducers = combineReducers({

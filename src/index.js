@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 import { store } from './RtkQuery/store';
 import App from './components/App';
 
@@ -22,7 +22,7 @@ root.render(
             <Route path="/*" element={<App />} />
           </Routes>
         </BrowserRouter>
-        <ToastContainer />
+        {/* <ToastContainer /> */}
       </PersistGate>
     </Provider>
   </React.StrictMode>,
