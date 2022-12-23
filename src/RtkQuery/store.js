@@ -16,6 +16,7 @@ import api from './slices/apiSlice';
 import authReducer from './slices/auth/authSlice';
 import { authApi } from './slices/auth/authApi';
 import { categorySlice } from './slices/product_catalog/categorySlice';
+import basketReducer from './slices/cart/basketSlice';
 
 const persistConfig = {
   key: 'root',
@@ -27,6 +28,7 @@ export const rootReducers = combineReducers({
   auth: authReducer,
   [authApi.reducerPath]: authApi.reducer,
   [categorySlice.reducerPath]: categorySlice.reducer,
+  basket: basketReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducers);
