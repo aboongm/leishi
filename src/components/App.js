@@ -8,6 +8,7 @@ import Basket from './cart/Basket';
 import RequireAuth from './auth/RequireAuth';
 import Payment from './payment/Payment';
 import Order from './order/Order';
+import Search from './sorting/Search';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/products/:categoryId" element={<ProductList />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/search" element={<Search />} />
 
         <Route element={<RequireAuth />}>
           <Route path="/payment" element={<Payment />} />
