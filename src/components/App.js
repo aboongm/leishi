@@ -5,6 +5,9 @@ import Login from './auth/Login';
 import Signup from './auth/Signup';
 import ProductList from './product_catalog/ProductList';
 import Basket from './cart/Basket';
+import RequireAuth from './auth/RequireAuth';
+import Payment from './payment/Payment';
+import Order from './order/Order';
 
 function App() {
   return (
@@ -15,6 +18,11 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/products/:categoryId" element={<ProductList />} />
         <Route path="/basket" element={<Basket />} />
+
+        <Route element={<RequireAuth />}>
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/orders" element={<Order />} />
+        </Route>
       </Route>
     </Routes>
   );
