@@ -17,11 +17,12 @@ import authReducer from './slices/auth/authSlice';
 import { authApi } from './slices/auth/authApi';
 import { categorySlice } from './slices/product_catalog/categorySlice';
 import basketReducer from './slices/cart/basketSlice';
+import searchReducer from './slices/sorting/searchSlice';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth', 'basket'],
+  whitelist: ['auth', 'basket', 'search'],
 };
 
 export const rootReducers = combineReducers({
@@ -29,6 +30,7 @@ export const rootReducers = combineReducers({
   [authApi.reducerPath]: authApi.reducer,
   [categorySlice.reducerPath]: categorySlice.reducer,
   basket: basketReducer,
+  search: searchReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducers);
