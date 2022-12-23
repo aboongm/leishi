@@ -11,9 +11,11 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+
 import api from './slices/apiSlice';
-import authReducer from './slices/authSlice';
-import { authApi } from './slices/authApi';
+import authReducer from './slices/auth/authSlice';
+import { authApi } from './slices/auth/authApi';
+import { categorySlice } from './slices/home/categorySlice';
 
 const persistConfig = {
   key: 'root',
@@ -24,6 +26,7 @@ const persistConfig = {
 export const rootReducers = combineReducers({
   auth: authReducer,
   [authApi.reducerPath]: authApi.reducer,
+  [categorySlice.reducerPath]: categorySlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducers);

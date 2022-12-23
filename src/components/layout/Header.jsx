@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import leishi from '../../assets/images/leishi.png';
 import './Header.css';
 // import { useSendLogoutMutation } from '../../RtkQuery/slices/authApi';
-import { logOut } from '../../RtkQuery/slices/authSlice';
+import { logOut } from '../../RtkQuery/slices/auth/authSlice';
 
 const Header = () => {
   const dispatch = useDispatch();

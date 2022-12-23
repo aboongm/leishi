@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import './loginSignup.css';
 import PulseLoader from 'react-spinners/PulseLoader';
 import leishi from '../../assets/images/leishi.png';
-import { useLoginUserMutation } from '../../RtkQuery/slices/authApi';
-import { setCredentials } from '../../RtkQuery/slices/authSlice';
+import { useLoginUserMutation } from '../../RtkQuery/slices/auth/authApi';
+import { setCredentials } from '../../RtkQuery/slices/auth/authSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
