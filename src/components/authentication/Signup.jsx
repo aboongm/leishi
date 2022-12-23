@@ -1,27 +1,78 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './loginSignup.css';
+import { useDispatch } from 'react-redux';
+import PulseLoader from 'react-spinners/PulseLoader';
 import leishi from '../../assets/images/leishi.png';
+import { useRegisterUserMutation } from '../../RtkQuery/slices/authApi';
+import { setCredentials } from '../../RtkQuery/slices/authSlice';
 
 const Signup = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [mobileNo, setMobileNo] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+
+  /* eslint-disable operator-linebreak */
+  const [registerUser, { data: registerData, isLoading, isSuccess }] =
+    useRegisterUserMutation();
+  /* eslint-enable operator-linebreak */
 
   const handleNameInput = (e) => setFullname(e.target.value);
   const handleEmailInput = (e) => setEmail(e.target.value);
   const handlePasswordInput = (e) => setPassword(e.target.value);
+  const handleMobileNoInput = (e) => setMobileNo(e.target.value);
+
+  useEffect(() => {
+    setErrMsg('');
+  }, [fullname, email, password]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({
-      user: {
-        fullname,
-        email,
-        password,
-      },
-    });
+
+    try {
+      const data = await registerUser({
+        user: {
+          fullname,
+          email,
+          password,
+          mobileNo,
+        },
+      }).unwrap();
+      console.log(data);
+      navigate('/');
+    } catch (error) {
+      if (!error) {
+        setErrMsg('No server response' || errMsg);
+      } else if (error.status === 400) {
+        setErrMsg('Invalid email or password');
+      } else if (error.status === 401) {
+        setErrMsg('Unauthorized');
+      } else {
+        setErrMsg(error.data?.message);
+      }
+    }
   };
+
+  /* eslint-disable comma-dangle */
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(
+        setCredentials({
+          user: registerData.status.data,
+          token: registerData.status.accessToken,
+          isLoggedIn: true,
+        })
+      );
+    }
+  }, [isSuccess]);
+  /* eslint-enable comma-dangle */
+
+  if (isLoading) return <PulseLoader color="#f50057" size={30} />;
 
   const content = (
     <section className="signup__container">
@@ -88,6 +139,24 @@ const Signup = () => {
                 value={password}
                 onChange={handlePasswordInput}
                 placeholder="Password"
+                required
+              />
+            </label>
+          </div>
+
+          <div className="mt-4">
+            <label
+              htmlFor="signup"
+              className="text-sm font-medium leading-none login__next"
+            >
+              <input
+                aria-label="enter your mobile number"
+                type="number"
+                id="number"
+                className="bg-gray-200 border rounded focus:outline-none text-base font-medium leading-none login__text py-3 w-full pl-3 mt-2"
+                value={mobileNo}
+                onChange={handleMobileNoInput}
+                placeholder="Mobile Number"
                 required
               />
             </label>

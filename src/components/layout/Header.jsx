@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Avatar } from '@mui/material';
 import { useSelector } from 'react-redux';
 import leishi from '../../assets/images/leishi.png';
 import './Header.css';
+import { useSendLogoutMutation } from '../../RtkQuery/slices/authApi';
 
 const Header = () => {
+  const navigate = useNavigate;
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState('');
 
   const user = useSelector((state) => state.auth);
-  console.log(user);
+  const [sendLogout, { isSuccess }] = useSendLogoutMutation();
 
   const handleSearch = (e) => {
     e.preventDefault();
   };
 
-  const handleAuthentication = () => {};
+  useEffect(() => {
+    if (isSuccess) {
+      navigate('/');
+    }
+  }, [isSuccess, navigate]);
 
   const content = (
     <nav className="2xl:container 2xl:mx-auto w-full bg-white">
@@ -40,7 +46,7 @@ const Header = () => {
             <option value={9}>Miscellaneous</option>
           </select>
 
-          <form className="input" onSubmit={handleSearch}>
+          <div className="input" onSubmit={handleSearch}>
             <input
               type="text"
               id="search"
@@ -57,7 +63,7 @@ const Header = () => {
             >
               <SearchIcon />
             </button>
-          </form>
+          </div>
         </form>
 
         <div className="header__nav">
@@ -66,7 +72,7 @@ const Header = () => {
               <div
                 role="presentation"
                 className="header__option hide__item"
-                onClick={handleAuthentication}
+                onClick={sendLogout}
               >
                 <span className="header__optionLineOne">
                   Hello
@@ -186,7 +192,7 @@ const Header = () => {
           {user.isLoggedIn ? (
             <button
               type="button"
-              onClick={handleAuthentication}
+              onClick={sendLogout}
               className="rounded-md flex space-x-2 w-full h-12 font-normal text-base leading-3 text-cyan-900 bg-cyan-900 bg-opacity-0 hover:opacity-100 duration-100 border border-cyan-900 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center"
             >
               Sign Out

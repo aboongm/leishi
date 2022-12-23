@@ -11,6 +11,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import api from './slices/apiSlice';
 import authReducer from './slices/authSlice';
 import { authApi } from './slices/authApi';
 
@@ -33,7 +34,7 @@ export const store = configureStore({
     serializableCheck: {
       ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
-  }).concat(),
+  }).concat(api.middleware),
 });
 
 setupListeners(store.dispatch);

@@ -33,11 +33,13 @@ const Login = () => {
           password,
         },
       }).unwrap();
+      console.log(status);
       const userInfo = {
         user: status.data,
-        token: status.token,
+        token: status.accessToken,
         isLoggedIn: true,
       };
+      console.log(userInfo);
       dispatch(setCredentials(userInfo));
       setEmail('');
       setPassword('');
