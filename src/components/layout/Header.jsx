@@ -6,7 +6,6 @@ import { Avatar } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import leishi from '../../assets/images/leishi.png';
 import './Header.css';
-// import { useSendLogoutMutation } from '../../RtkQuery/slices/authApi';
 import { logOut } from '../../RtkQuery/slices/auth/authSlice';
 
 const Header = () => {
@@ -16,17 +15,11 @@ const Header = () => {
   const [search, setSearch] = useState('');
 
   const user = useSelector((state) => state.auth);
-  // const [sendLogout, { isSuccess }] = useSendLogoutMutation();
+  const basket = useSelector((state) => state.basket.basket);
 
   const handleSearch = (e) => {
     e.preventDefault();
   };
-
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //     navigate('/');
-  //   }
-  // }, [isSuccess, navigate]);
 
   const handleAuthentication = () => {
     if (user.user) {
@@ -104,14 +97,13 @@ const Header = () => {
               <div className="header__optionBasket">
                 <ShoppingBasketIcon />
                 <div className="header__optionLineTwo header__basketCount">
-                  {/* {basket.length} */}
-                  22
+                  {basket.length}
                 </div>
               </div>
             </Link>
             <div className="header__option hide__item">
               <Avatar
-                alt="Remy Sharp"
+                alt="Smart Profile"
                 src={user.user ? user.user.avatar : ''}
               />
             </div>

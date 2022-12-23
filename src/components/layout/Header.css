@@ -93,6 +93,7 @@
 }
 
 .header__basketCount {
+  font-size: 12px;
   color: #f1f0f0;
   border: 1px solid #e1dede;
   width: 22px;

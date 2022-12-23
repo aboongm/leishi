@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import './Product.css';
+import { addingToBasket } from '../../RtkQuery/slices/cart/basketSlice';
 
 /* eslint-disable object-curly-newline */
 const Product = ({ id, title, image, price, rating }) => {
@@ -9,11 +10,10 @@ const Product = ({ id, title, image, price, rating }) => {
 
   const addToBasket = () => {
     const data = { id, title, image, price, rating };
-    dispatch();
-    if (data) {
-      //   toast.success('Item added to basket');
-      console.log('Item added to basket');
-    }
+    dispatch(addingToBasket(data));
+    // if (data) {
+    //     toast.success('Item added to basket');
+    // }
   };
   /* eslint-enable object-curly-newline */
 
