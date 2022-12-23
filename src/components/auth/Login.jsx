@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './loginSignup.css';
-import leishi from '../../assets/images/leishi.png';
+import leishi from '../../assets/images/leshee.png';
 import { useLoginUserMutation } from '../../RtkQuery/slices/auth/authApi';
 import { setCredentials } from '../../RtkQuery/slices/auth/authSlice';
 
@@ -60,7 +60,7 @@ const Login = () => {
         <Link to="/">
           <img src={leishi} alt="leishi" className="header__logo" />
         </Link>
-        <div className="bg-white border shadow rounded lg:w-1/3 md:w-1/2 w-full p-10 mt-12">
+        <div className="bg-white border shadow rounded lg:w-1/3 md:w-1/2 w-full p-10 mt-8">
           <p className="text-2xl font-extrabold leading-6 login__text">
             Login to your account
           </p>

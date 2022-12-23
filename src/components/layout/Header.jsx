@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useSelector, useDispatch } from 'react-redux';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Avatar } from '@mui/material';
-import leishi from '../../assets/images/leishi.png';
+import leishi from '../../assets/images/leshee.png';
 import './Header.css';
 import { logOut } from '../../RtkQuery/slices/auth/authSlice';
 import { useGetProductsQuery } from '../../RtkQuery/slices/product_catalog/productListSlice';
@@ -33,7 +33,7 @@ const Header = () => {
 
   let content;
 
-  if (isLoading) content = <h5>Loading...</h5>;
+  if (isLoading) content = <h5 className="hide">Loading...</h5>;
 
   const handleSelect = (e) => {
     e.preventDefault();
@@ -62,7 +62,7 @@ const Header = () => {
       <nav className="2xl:container 2xl:mx-auto w-full bg-white">
         <div className={`${show ? 'hide' : 'block'} header `}>
           <Link to="/">
-            <img className="header__logo" src={leishi} alt="mazoon" />
+            <img className="header__logo__left" src={leishi} alt="mazoon" />
           </Link>
           <form className="header__search">
             <select onChange={handleSelect} className="header__select classic">

@@ -12,11 +12,10 @@
   padding: 0 20px;
 }
 
-.header__logo {
+.header__logo__left {
   width: 100px;
   object-fit: contain;
   margin: 0 20px;
-  margin-top: 18px;
 }
 
 .header__search {
