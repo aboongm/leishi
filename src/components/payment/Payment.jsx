@@ -25,7 +25,6 @@ const Payment = () => {
 
     dispatch(emptyingBasket());
     navigate('/orders');
-    console.log('order added');
   };
 
   const content = (
