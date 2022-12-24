@@ -2,7 +2,6 @@
   height: 164px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: #fff;
   position: fixed;
   width: 100%;
@@ -41,8 +40,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -moz-appearance: none;
-  background:
-    url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
     no-repeat right;
   -webkit-appearance: none;
   background-position-x: 98%;
@@ -112,7 +110,7 @@
   justify-content: space-evenly;
   position: fixed;
   right: 62px;
-  top: 16px;
+  top: 10px;
 }
 
 .header__option {
@@ -134,7 +132,7 @@
 .menu {
   position: fixed;
   right: 28px;
-  top: 18px;
+  top: 10px;
   z-index: 11;
 }
 

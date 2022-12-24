@@ -15,7 +15,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState('');
-  const [show, setshow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const user = useSelector((state) => state.auth);
   const basket = useSelector((state) => state.basket.basket);
@@ -60,7 +60,8 @@ const Header = () => {
   if (isSuccess) {
     content = (
       <nav className="2xl:container 2xl:mx-auto w-full bg-white">
-        <div className={`${show ? 'hide' : 'block'} header `}>
+        {/* <div className={`${show ? 'hide' : 'block'} header `}> */}
+        <div className="header">
           <Link to="/">
             <img className="header__logo__left" src={leishi} alt="mazoon" />
           </Link>
@@ -140,7 +141,7 @@ const Header = () => {
         <div
           role="presentation"
           id="bgIcon"
-          onClick={() => setshow(!show)}
+          onClick={() => setShow(!show)}
           className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 hide__menu menu justify-center items-center  cursor-pointer"
         >
           <svg
