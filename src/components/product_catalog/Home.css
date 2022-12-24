@@ -9,7 +9,6 @@
     z-index: -1;
     margin-bottom: -200px;
     margin-top: 60px;
-    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
   }
 
   .home__row {
@@ -34,6 +33,7 @@
     display: block;
   }
 }
+
 @media (min-width: 1024px) {
   .home__row {
     grid-template-columns: repeat(4, 1fr);

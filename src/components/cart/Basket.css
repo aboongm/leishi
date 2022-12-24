@@ -3,12 +3,6 @@
   padding: 20px;
 }
 
-.checkout__ad {
-}
-
-.checkout__container {
-}
-
 .checkout__hello {
   font-size: 16px;
   font-weight: 400;
@@ -28,13 +22,4 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-}
-
-@media (min-width: 640px) {
-}
-
-@media (min-width: 769px) {
-}
-
-@media (min-width: 1024px) {
 }

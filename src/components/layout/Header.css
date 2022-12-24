@@ -34,16 +34,14 @@
   background-color: #fff;
   border: 1px solid #d5d1d1;
   outline: none;
-  margin-top: 6px;
   border-radius: 4px;
-  margin: 0;
+  margin: 6px 0 0 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
   -moz-appearance: none;
-
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+  background:
+    url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
     no-repeat right;
   -webkit-appearance: none;
   background-position-x: 98%;

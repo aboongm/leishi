@@ -19,6 +19,7 @@
   margin: 20px;
   padding: 10px;
 }
+
 .productList__title > h1 {
   width: 100%;
 }
@@ -49,10 +50,12 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (min-width: 1024px) {
   .productList__row {
     grid-template-columns: repeat(4, 1fr);
   }
+
   .productList__title {
     margin: 70px 20px 20px 20px;
   }
