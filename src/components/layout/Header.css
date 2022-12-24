@@ -14,7 +14,7 @@
 .header__logo__left {
   width: 100px;
   object-fit: contain;
-  margin: 0 20px;
+  margin: 8px 20px 0 0;
 }
 
 .header__search {
@@ -110,7 +110,7 @@
   justify-content: space-evenly;
   position: fixed;
   right: 62px;
-  top: 10px;
+  top: 14px;
 }
 
 .header__option {
@@ -132,7 +132,7 @@
 .menu {
   position: fixed;
   right: 28px;
-  top: 10px;
+  top: 14px;
   z-index: 11;
 }
 
