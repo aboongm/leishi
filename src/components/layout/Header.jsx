@@ -63,7 +63,7 @@ const Header = () => {
         {/* <div className={`${show ? 'hide' : 'block'} header `}> */}
         <div className="header">
           <Link to="/">
-            <img className="header__logo__left" src={leishi} alt="mazoon" />
+            <img className="header__logo__left" src={leishi} alt="leisee" />
           </Link>
           <form className="header__search">
             <select onChange={handleSelect} className="header__select classic">
@@ -119,7 +119,7 @@ const Header = () => {
                 <span className="header__optionLineTwo">& Orders</span>
               </div>
             </Link>
-            <Link to="/checkout">
+            <Link to="/payment">
               <div className="header__optionBasket">
                 <ShoppingBasketIcon />
                 <div className="header__optionLineTwo header__basketCount">
