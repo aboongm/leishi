@@ -4,7 +4,7 @@ export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     // baseUrl: 'http://localhost:3000',
-    baseUrl: 'https://leisee1.fly.dev',
+    baseUrl: 'https://leisee1.fly.dev/',
   }),
   endpoints: () => ({}),
 });
