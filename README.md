@@ -23,13 +23,13 @@ This ECommerce app has ReactJS Frontend and Ruby On Rails Backend API. It is a f
 
 ### Mobile and Tablet Version
 
-<div style="text-align: center">
+<div style="text-align: center;border-top: 1px solid lightgray; padding-top: 16px; margin-bottom: 20px">
     <img src="https://user-images.githubusercontent.com/49184579/210315360-adf92fd3-0f71-43a4-abea-ad032a66fff4.png" alt="homepage-mobile" width="360">
 </div>
 
 ### Desktop version
 
-<div style="text-align: center">
+<div style="text-align: center;  border-top: 1px solid lightgray; padding-top: 16px; margin-bottom: 20px">
     <img src="https://user-images.githubusercontent.com/49184579/210315373-d5cb06a7-ea92-4386-8760-f558b4c68a3d.png"  width="600" alt="Homepage-desktop">
 </div>
 
