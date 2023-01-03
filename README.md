@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# ECommerce App - A Full-stack React & Rails App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This ECommerce app has ReactJS Frontend and Ruby On Rails Backend API. It is a full-stack app that has following users with different roles:
 
-## Available Scripts
+- Admin can change the role of any user
+- Seller can create products and manage their products
+- Buyer can buy products and manage their orders
 
-In the project directory, you can run:
+## Live server
 
-### `npm start`
+[Demo](https://leisee.netlify.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built With
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React 18.2
+- RTK Query 1.8.5
+- TailwindCSS 3.1.8
+- Ruby 3.1.3
+- Ruby on Rails 7
+- Postgresql 14
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Mobile and Tablet Version
 
-### `npm run build`
+<div style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/49184579/210315360-adf92fd3-0f71-43a4-abea-ad032a66fff4.png" alt="homepage-mobile" width="360">
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Desktop version
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div style="text-align: center">
+    <img src="https://user-images.githubusercontent.com/49184579/210315373-d5cb06a7-ea92-4386-8760-f558b4c68a3d.png"  width="600" alt="Homepage-desktop">
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Author 1:
 
-### `npm run eject`
+👤 **Ranjit Luwang**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- GitHub: [@aboongm](https://github.com/aboongm)
+- Twitter: [@John_luang1](https://twitter.com/John_luang1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aboongm)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🤝 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions, issues, and feature requests are welcome!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Feel free to check the [issues page](https://github.com/aboongm/leishi/issues).
 
-## Learn More
+## Show your support
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Give a ⭐️ if you like this project!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgments
 
-### Code Splitting
+- Hat tip to anyone whose code was used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.
