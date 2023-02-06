@@ -25,11 +25,13 @@ group :development, :test do
   gem "factory_bot_rails", "~> 6.2"
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
   gem 'pry-rails'
+  gem "shoulda-matchers", "~> 5.3"
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
 
 

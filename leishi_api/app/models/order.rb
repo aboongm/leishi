@@ -3,7 +3,8 @@ class Order < ApplicationRecord
   serialize :purchase, JSON
 
   # belongs_to :product
-  belongs_to :buyer, class_name: 'User'
+  # belongs_to :buyer, class_name: 'User'
+  belongs_to :buyer, class_name: 'User', foreign_key: :buyer_id
   # belongs_to :seller, class_name: 'User'
  
   validates :amount, presence: true

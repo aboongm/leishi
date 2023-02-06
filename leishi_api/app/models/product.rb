@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category
-  belongs_to :seller, class_name: 'User'
+  belongs_to :seller, class_name: 'User', foreign_key: :seller_id
   has_many :orders, dependent: :destroy
   has_many :buyers, through: :orders, source: :buyer
 
