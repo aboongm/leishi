@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useSelector, useDispatch } from 'react-redux';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Avatar } from '@mui/material';
-import leishi from '../../assets/images/leishi.png';
+import leishi from '../../assets/images/leshee.png';
 import './Header.css';
 import { logOut } from '../../RtkQuery/slices/auth/authSlice';
 import { useGetProductsQuery } from '../../RtkQuery/slices/product_catalog/productListSlice';
@@ -32,8 +32,6 @@ const Header = () => {
   const { data, isLoading, isSuccess } = useGetProductsQuery();
 
   let content;
-
-  if (isLoading) content = <h5>Loading...</h5>;
 
   const handleSelect = (e) => {
     e.preventDefault();
