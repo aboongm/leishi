@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const Category = ({ codeNumber, title, image }) => {
   const navigate = useNavigate();
+  const categoryTitleId = `category-title-${codeNumber}`;
 
   const handleNavigateProducts = () => {
     navigate(`/products/${codeNumber}`);
@@ -12,13 +13,21 @@ const Category = ({ codeNumber, title, image }) => {
 
   const content = (
     <div
-      role="presentation"
+      // role="presentation"
       className="category shadow-lg"
       onClick={handleNavigateProducts}
     >
       <h1 className="uppercase">{title}</h1>
       <img src={image} alt="" />
-      <button type="button">Shop Now</button>
+      <button
+        type="button"
+        role="button"
+        name="Shop Now"
+        aria-label="Shop Now"
+        aria-labelledby={categoryTitleId}
+      >
+        Shop Now
+      </button>
     </div>
   );
   return content;

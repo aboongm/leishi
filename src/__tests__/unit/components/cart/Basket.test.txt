@@ -1,0 +1,90 @@
+import React from 'react';
+import { render, cleanup } from '@testing-library/react';
+import { useSelector } from 'react-redux';
+import Basket from '../../../../components/cart/Basket';
+
+jest.mock('react-redux', () => ({
+  useSelector: jest.fn(),
+}));
+
+describe('Basket component', () => {
+  afterEach(cleanup);
+
+  it('renders without crashing', () => {
+    useSelector.mockImplementation((cb) =>
+      cb({
+        auth: {
+          isLoggedIn: true,
+          user: {
+            fullname: 'John Doe',
+          },
+        },
+        basket: {
+          basket: [
+            {
+              id: 1,
+              title: 'Product 1',
+              image: 'product1.jpg',
+              price: 10,
+              rating: 4,
+            },
+          ],
+        },
+      })
+    );
+
+    const { getByText } = render(<Basket />);
+    expect(getByText(/Your Shopping Basket/i)).toBeInTheDocument();
+  });
+
+  it('renders guest user message when user is not logged in', () => {
+    useSelector.mockImplementation((cb) =>
+      cb({
+        auth: {
+          isLoggedIn: false,
+        },
+        basket: {
+          basket: [
+            {
+              id: 1,
+              title: 'Product 1',
+              image: 'product1.jpg',
+              price: 10,
+              rating: 4,
+            },
+          ],
+        },
+      })
+    );
+
+    const { getByText } = render(<Basket />);
+    expect(getByText(/Hello Guest!/i)).toBeInTheDocument();
+  });
+
+  it('renders fullname when user is logged in', () => {
+    useSelector.mockImplementation((cb) =>
+      cb({
+        auth: {
+          isLoggedIn: true,
+          user: {
+            fullname: 'John Doe',
+          },
+        },
+        basket: {
+          basket: [
+            {
+              id: 1,
+              title: 'Product 1',
+              image: 'product1.jpg',
+              price: 10,
+              rating: 4,
+            },
+          ],
+        },
+      })
+    );
+
+    const { getByText } = render(<Basket />);
+    expect(getByText(/Hello John Doe/i)).toBeInTheDocument();
+  });
+});

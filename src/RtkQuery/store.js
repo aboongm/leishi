@@ -38,12 +38,11 @@ const persistedReducer = persistReducer(persistConfig, rootReducers);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }).concat(api.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+      ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }).concat(api.middleware),
 });
 
 setupListeners(store.dispatch);

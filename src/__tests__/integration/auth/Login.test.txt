@@ -1,0 +1,80 @@
+// import React from 'react';
+// import { render, fireEvent } from '@testing-library/react';
+// import { Provider } from 'react-redux';
+// import Login from '../../../../components/auth/Login';
+// import configureStore from '../../../../RtkQuery/store';
+// import { useLoginUserMutation } from '../../../../RtkQuery/slices/auth/authApi';
+
+// jest.mock('../../../../RtkQuery/slices/auth/authApi', () => ({
+//   useLoginUserMutation: jest.fn(),
+// }));
+
+// const mockStore = configureStore([]);
+// const store = mockStore({});
+
+// describe('Login component', () => {
+//   let component;
+//   const email = 'test@email.com';
+//   const password = 'testpassword';
+//   const loginUserMutationMock = jest.fn();
+
+//   beforeEach(() => {
+//     useLoginUserMutation.mockReturnValue([loginUserMutationMock]);
+//     component = render(
+//       <Provider store={store}>
+//         <Login />
+//       </Provider>
+//     );
+//   });
+
+//   afterEach(() => {
+//     useLoginUserMutation.mockClear();
+//     loginUserMutationMock.mockClear();
+//   });
+
+//   it('should render the component', () => {
+//     const { container } = component;
+//     expect(container).toBeTruthy();
+//   });
+
+//   it('should update email value on input change', async () => {
+//     const { getByLabelText } = component;
+//     const emailInput = getByLabelText('enter you email address');
+//     fireEvent.change(emailInput, { target: { value: email } });
+//     expect(emailInput.value).toBe(email);
+//   });
+
+//   it('should update password value on input change', async () => {
+//     const { getByLabelText } = component;
+//     const passwordInput = getByLabelText('enter you email address', {
+//       selector: 'input[type="password"]',
+//     });
+//     fireEvent.change(passwordInput, { target: { value: password } });
+//     expect(passwordInput.value).toBe(password);
+//   });
+
+//   it('should call loginUser mutation when form is submitted', async () => {
+//     const { getByLabelText, getByText } = component;
+//     const emailInput = getByLabelText('enter you email address');
+//     const passwordInput = getByLabelText('enter you email address', {
+//       selector: 'input[type="password"]',
+//     });
+//     const submitButton = getByText('Login');
+
+//     fireEvent.change(emailInput, { target: { value: email } });
+//     fireEvent.change(passwordInput, { target: { value: password } });
+//     fireEvent.click(submitButton);
+
+//     expect(loginUserMutationMock).toHaveBeenCalledWith({
+//       user: {
+//         email,
+//         password,
+//       },
+//     });
+//   });
+
+//   //   it('should show error message if there is no server response', async () => {
+//   //     const { getByLabelText, getByText } = component;
+//   //     const emailInput = getByLabelText('enter you email address');
+//   //     const passwordInput =
+// });
