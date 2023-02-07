@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+// import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
 import Category from '../../../../components/product_catalog/Category';
 
@@ -12,7 +13,7 @@ describe('Category component', () => {
     const { getByText, getByAltText } = render(
       <Router>
         <Category title={title} image={image} codeNumber={codeNumber} />
-      </Router>
+      </Router>,
     );
     expect(getByText(title)).toBeTruthy();
     expect(getByAltText('')).toBeTruthy();
@@ -23,7 +24,7 @@ describe('Category component', () => {
     const { getByTestId } = render(
       <Router>
         <Category title={title} image={image} codeNumber={codeNumber} />
-      </Router>
+      </Router>,
     );
     const shopNowButton = getByTestId('shop-now-button');
     fireEvent.click(shopNowButton);
