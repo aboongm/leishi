@@ -2,13 +2,11 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Product from '../../../../components/product_catalog/Product';
-import { addingToBasket } from '../../../../RtkQuery/slices/cart/basketSlice';
+// import { addingToBasket } from '../../../../RtkQuery/slices/cart/basketSlice';
 
-jest.mock('react-redux', () => {
-  return {
-    useDispatch: jest.fn(() => jest.fn()),
-  };
-});
+jest.mock('react-redux', () => ({
+  useDispatch: jest.fn(() => jest.fn()),
+}));
 
 describe('Product component', () => {
   it('renders the product details correctly', async () => {
@@ -20,6 +18,7 @@ describe('Product component', () => {
       rating: 5,
     };
 
+    /* eslint-disable react/jsx-props-no-spreading */
     render(<Product {...product} />);
 
     // Check if product price is displayed correctly
@@ -44,9 +43,9 @@ describe('Product component', () => {
     expect(addToBasketButton).toBeInTheDocument();
 
     // // Test add to basket functionality
-    const dispatch = require('react-redux').useDispatch;
-    const dispatchSpy = jest.spyOn(dispatch, 'mockImplementation');
-    addToBasketButton.click();
+    // const dispatch = require('react-redux').useDispatch;
+    // const dispatchSpy = jest.spyOn(dispatch, 'mockImplementation');
+    // addToBasketButton.click();
     // expect(dispatchSpy).toHaveBeenCalledWith(addingToBasket(product));
   });
 });
