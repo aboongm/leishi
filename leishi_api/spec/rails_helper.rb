@@ -34,6 +34,10 @@ end
 RSpec.configure do |config|
   # this is added for using factorybot methods
   config.include FactoryBot::Syntax::Methods
+
+  # this is added for authentication
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
