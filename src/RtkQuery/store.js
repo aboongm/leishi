@@ -27,6 +27,7 @@ const persistConfig = {
 
 export const rootReducers = combineReducers({
   auth: authReducer,
+  // authApi: authApi.reducer,
   [authApi.reducerPath]: authApi.reducer,
   [categorySlice.reducerPath]: categorySlice.reducer,
   basket: basketReducer,
@@ -37,11 +38,12 @@ const persistedReducer = persistReducer(persistConfig, rootReducers);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    serializableCheck: {
-      ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }).concat(api.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(api.middleware),
 });
 
 setupListeners(store.dispatch);

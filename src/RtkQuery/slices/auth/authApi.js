@@ -52,3 +52,5 @@ export const {
   useSendLogoutMutation,
   useRegisterUserMutation,
 } = authApi;
+
+export const reducerPath = 'authApi';
