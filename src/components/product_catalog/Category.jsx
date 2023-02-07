@@ -25,6 +25,7 @@ const Category = ({ codeNumber, title, image }) => {
         name="Shop Now"
         aria-label="Shop Now"
         aria-labelledby={categoryTitleId}
+        data-testid="shop-now-button"
       >
         Shop Now
       </button>
