@@ -10,7 +10,17 @@ const Home = () => {
   const { data, isLoading, isSuccess } = useGetCategoriesQuery();
 
   let content;
-  if (isLoading) content = <PulseLoader color="#f50057" size={30} />;
+  {
+    isLoading &&
+      (content = (
+        <div
+          data-testid="loading-indicator"
+          className="flex items-center justify-center h-96"
+        >
+          <PulseLoader color="#f50057" size={30} />
+        </div>
+      ));
+  }
 
   if (isSuccess) {
     content = (
