@@ -21,7 +21,6 @@
 .subtotal > button {
   background: #2b83b2;
   border-radius: 2px;
-  /* width: 100%; */
   border: 1px solid;
   margin-top: 10px;
   border-color: #54acd7 #2a7aa2 #185e81;
@@ -33,9 +32,4 @@
   .subtotal > button {
     /* width: 50%; */
   }
-}
-
-@media (min-width: 769px) {
-}
-@media (min-width: 1024px) {
 }
