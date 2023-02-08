@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-import Footer from '../../../../components/layout/Footer';
+import Footer from '../../../components/layout/Footer';
 
 describe('Footer', () => {
   it('renders the footer with links', () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Search from '../../../../components/sorting/Search';
+import Search from '../../../components/sorting/Search';
 
 const state = {
   search: {

@@ -2,8 +2,8 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { useDispatch } from 'react-redux';
-import BasketProduct from '../../../../components/cart/BasketProduct';
-import { removingFromBasket } from '../../../../RtkQuery/slices/cart/basketSlice';
+import BasketProduct from '../../../components/cart/BasketProduct';
+import { removingFromBasket } from '../../../RtkQuery/slices/cart/basketSlice';
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),

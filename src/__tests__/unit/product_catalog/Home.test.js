@@ -2,8 +2,8 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Home from '../../../../components/product_catalog/Home';
-import { useGetCategoriesQuery } from '../../../../RtkQuery/slices/product_catalog/categorySlice';
+import Home from '../../../components/product_catalog/Home';
+import { useGetCategoriesQuery } from '../../../RtkQuery/slices/product_catalog/categorySlice';
 
 jest.mock('react-spinners/PulseLoader', () => {
   /* eslint-disable-line */
@@ -22,7 +22,7 @@ jest.mock('react-spinners/PulseLoader', () => {
   return MockPulseLoader;
 });
 
-jest.mock('../../../../RtkQuery/slices/product_catalog/categorySlice', () => ({
+jest.mock('../../../RtkQuery/slices/product_catalog/categorySlice', () => ({
   useGetCategoriesQuery: jest.fn(),
 }));
 

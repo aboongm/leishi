@@ -4,8 +4,8 @@ import { useParams, BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 // import PulseLoader from 'react-spinners/PulseLoader';
 import { createStore } from 'redux';
-import ProductList from '../../../../components/product_catalog/ProductList';
-import { useGetProductsQuery } from '../../../../RtkQuery/slices/product_catalog/productListSlice';
+import ProductList from '../../../components/product_catalog/ProductList';
+import { useGetProductsQuery } from '../../../RtkQuery/slices/product_catalog/productListSlice';
 
 jest.mock('react-spinners/PulseLoader', () => {
   /* eslint-disable-line */
@@ -24,12 +24,9 @@ jest.mock('react-spinners/PulseLoader', () => {
   return MockPulseLoader;
 });
 
-jest.mock(
-  '../../../../RtkQuery/slices/product_catalog/productListSlice',
-  () => ({
-    useGetProductsQuery: jest.fn(),
-  }),
-);
+jest.mock('../../../RtkQuery/slices/product_catalog/productListSlice', () => ({
+  useGetProductsQuery: jest.fn(),
+}));
 
 jest.mock('react-router-dom', () => {
   const originalModule = jest.requireActual('react-router-dom');

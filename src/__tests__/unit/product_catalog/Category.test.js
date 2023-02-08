@@ -2,7 +2,7 @@ import React from 'react';
 // import { render, fireEvent, waitFor } from '@testing-library/react';
 import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-import Category from '../../../../components/product_catalog/Category';
+import Category from '../../../components/product_catalog/Category';
 
 describe('Category component', () => {
   const title = 'Test Title';

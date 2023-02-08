@@ -4,9 +4,9 @@ import {
 } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
-import { logOut } from '../../../../RtkQuery/slices/auth/authSlice';
+import { logOut } from '../../../RtkQuery/slices/auth/authSlice';
 // import { getSearchResult } from '../../../../RtkQuery/slices/sorting/searchSlice';
-import Header from '../../../../components/layout/Header';
+import Header from '../../../components/layout/Header';
 
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
@@ -14,15 +14,15 @@ jest.mock('react-redux', () => ({
 }));
 
 /* eslint-disable react/display-name */
-jest.mock('../../../../components/layout/Header', () => () => (
+jest.mock('../../../components/layout/Header', () => () => (
   <mock-Header data-testid="header" />
 ));
 
-jest.mock('../../../../RtkQuery/slices/auth/authSlice', () => ({
+jest.mock('../../../RtkQuery/slices/auth/authSlice', () => ({
   logOut: jest.fn(),
 }));
 
-jest.mock('../../../../RtkQuery/slices/sorting/searchSlice', () => ({
+jest.mock('../../../RtkQuery/slices/sorting/searchSlice', () => ({
   getSearchResult: jest.fn(),
 }));
 

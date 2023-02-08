@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter as Router } from 'react-router-dom';
-import Basket from '../../../../components/cart/Basket';
+import Basket from '../../../components/cart/Basket';
 
 const mockStore = configureStore([]);
 
