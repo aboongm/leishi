@@ -43,7 +43,7 @@ const BasketProduct = ({ id, title, price, image, rating, orderPage }) => {
 BasketProduct.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
   orderPage: PropTypes.bool.isRequired,

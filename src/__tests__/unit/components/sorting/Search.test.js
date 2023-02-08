@@ -32,7 +32,7 @@ describe('Search component', () => {
     render(
       <Provider store={store}>
         <Search />
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText('Search Results')).toBeTruthy();
