@@ -37,7 +37,7 @@ describe('Basket component', () => {
         <Router>
           <Basket />
         </Router>
-      </Provider>
+      </Provider>,
     );
     const hello = screen.getByText('Hello John Doe');
     const title = screen.getByText('Your Shopping Basket');
