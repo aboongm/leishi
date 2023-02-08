@@ -8,7 +8,7 @@ describe('Footer', () => {
     const { getByText } = render(
       <Router>
         <Footer />
-      </Router>
+      </Router>,
     );
 
     expect(getByText('Get to Know Us')).toBeTruthy();
