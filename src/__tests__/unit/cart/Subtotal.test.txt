@@ -1,0 +1,108 @@
+// import React from 'react';
+// import { screen, render, fireEvent } from '@testing-library/react';
+// import { Provider } from 'react-redux';
+// import configureStore from 'redux-mock-store';
+// import Subtotal from '../../../../components/cart/Subtotal';
+// import { MemoryRouter as Router } from 'react-router-dom';
+
+// const mockStore = configureStore([]);
+
+// describe('Subtotal', () => {
+//   let store;
+//   let navigate;
+
+//   beforeEach(() => {
+//     store = mockStore({
+//       auth: { user: null },
+//       basket: { basket: [] },
+//     });
+//     store.dispatch = jest.fn();
+//     navigate = jest.fn();
+//   });
+
+//   it('renders the subtotal', () => {
+//     render(
+//       <Provider store={store}>
+//         <Router>
+//           <Subtotal />
+//         </Router>
+//       </Provider>
+//     );
+//     const linkElement = screen.getByText(/Subtotal (0 items)/i);
+//     expect(linkElement).toBeInTheDocument();
+//   });
+
+//   //   it('redirects to login page if not authenticated', () => {
+//   //     const { getByText } = render(
+//   //       <Provider store={store}>
+//   //         <Subtotal />
+//   //       </Provider>
+//   //     );
+
+//   //     const button = getByText('Proceed to Checkout');
+//   //     fireEvent.click(button);
+
+//   //     expect(navigate).toHaveBeenCalledWith('/login');
+//   //   });
+
+//   //   it('redirects to payment page if authenticated', () => {
+//   //     store = mockStore({
+//   //       auth: { user: {} },
+//   //       basket: { basket: [] },
+//   //     });
+//   //     store.dispatch = jest.fn();
+
+//   //     const { getByText } = render(
+//   //       <Provider store={store}>
+//   //         <Subtotal />
+//   //       </Provider>
+//   //     );
+
+//   //     const button = getByText('Proceed to Checkout');
+//   //     fireEvent.click(button);
+
+//   //     expect(navigate).toHaveBeenCalledWith('/payment');
+//   //   });
+// });
+
+import React from 'react';
+import { screen, render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import { MemoryRouter as Router } from 'react-router-dom';
+import Subtotal from '../../../../components/cart/Subtotal';
+
+const mockStore = configureStore([]);
+
+describe('Subtotal', () => {
+  let store;
+
+  beforeEach(() => {
+    store = mockStore({
+      auth: { user: null },
+      basket: { basket: [] },
+    });
+    store.dispatch = jest.fn();
+  });
+
+  it('renders the subtotal', () => {
+    render(
+      <Provider store={store}>
+        <Router>
+          <Subtotal />
+        </Router>
+      </Provider>
+    );
+
+    const textMatcher = (content, element) => {
+      return (
+        content.includes('Subtotal') &&
+        content.includes('0') &&
+        content.includes('items') &&
+        element.tagName === 'p'
+      );
+    };
+
+    expect(screen.getByText(textMatcher)).toBeTruthy();
+  });
+});
