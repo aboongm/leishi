@@ -119,7 +119,7 @@ const Header = () => {
                 <span className="header__optionLineTwo">& Orders</span>
               </div>
             </Link>
-            <Link to="/payment">
+            <Link to="/basket">
               <div className="header__optionBasket">
                 <ShoppingBasketIcon />
                 <div className="header__optionLineTwo header__basketCount">

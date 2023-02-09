@@ -11,8 +11,17 @@ const ProductList = () => {
 
   let content;
 
-  if (isLoading) content = <PulseLoader color="#f50057" size={30} />;
-
+  {
+    isLoading &&
+      (content = (
+        <div
+          data-testid="spinner"
+          className="flex items-center justify-center h-96"
+        >
+          <PulseLoader color="#f50057" size={30} />
+        </div>
+      ));
+  }
   /* eslint-disable comma-dangle */
   if (isSuccess) {
     const filteredData = data.filter(
