@@ -12,17 +12,17 @@ const ProductList = () => {
   let content;
 
   /* eslint-disable operator-linebreak */
-  {
-    isLoading &&
-      (content = (
-        <div
-          data-testid="spinner"
-          className="flex items-center justify-center h-96"
-        >
-          <PulseLoader color="#f50057" size={30} />
-        </div>
-      ));
-  }
+
+  isLoading &&
+    (content = (
+      <div
+        data-testid="spinner"
+        className="flex items-center justify-center h-96"
+      >
+        <PulseLoader color="#f50057" size={30} />
+      </div>
+    ));
+
   /* eslint-enable operator-linebreak */
   /* eslint-disable comma-dangle */
   if (isSuccess) {
