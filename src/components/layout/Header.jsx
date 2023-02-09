@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useSelector, useDispatch } from 'react-redux';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Avatar } from '@mui/material';
-import leishi from '../../assets/images/leishi.png';
+import leishi from '../../assets/images/leshee.png';
 import './Header.css';
 import { logOut } from '../../RtkQuery/slices/auth/authSlice';
 import { useGetProductsQuery } from '../../RtkQuery/slices/product_catalog/productListSlice';
@@ -15,7 +15,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState('');
-  const [show, setshow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const user = useSelector((state) => state.auth);
   const basket = useSelector((state) => state.basket.basket);
@@ -33,7 +33,7 @@ const Header = () => {
 
   let content;
 
-  if (isLoading) content = <h5>Loading...</h5>;
+  if (isLoading) content = <h5 className="hide">Loading...</h5>;
 
   const handleSelect = (e) => {
     e.preventDefault();
@@ -60,9 +60,10 @@ const Header = () => {
   if (isSuccess) {
     content = (
       <nav className="2xl:container 2xl:mx-auto w-full bg-white">
-        <div className={`${show ? 'hide' : 'block'} header `}>
+        {/* <div className={`${show ? 'hide' : 'block'} header `}> */}
+        <div className="header">
           <Link to="/">
-            <img className="header__logo" src={leishi} alt="mazoon" />
+            <img className="header__logo__left" src={leishi} alt="leisee" />
           </Link>
           <form className="header__search">
             <select onChange={handleSelect} className="header__select classic">
@@ -118,7 +119,7 @@ const Header = () => {
                 <span className="header__optionLineTwo">& Orders</span>
               </div>
             </Link>
-            <Link to="/checkout">
+            <Link to="/basket">
               <div className="header__optionBasket">
                 <ShoppingBasketIcon />
                 <div className="header__optionLineTwo header__basketCount">
@@ -140,7 +141,7 @@ const Header = () => {
         <div
           role="presentation"
           id="bgIcon"
-          onClick={() => setshow(!show)}
+          onClick={() => setShow(!show)}
           className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 hide__menu menu justify-center items-center  cursor-pointer"
         >
           <svg
