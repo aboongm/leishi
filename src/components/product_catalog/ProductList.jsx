@@ -10,6 +10,7 @@ const ProductList = () => {
   const { data, isLoading, isSuccess } = useGetProductsQuery(categoryId);
 
   let content;
+  console.log('deploy');
 
   /* eslint-disable operator-linebreak */
 
