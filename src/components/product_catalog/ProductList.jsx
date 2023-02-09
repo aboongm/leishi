@@ -11,6 +11,7 @@ const ProductList = () => {
 
   let content;
 
+  /* eslint-disable operator-linebreak */
   {
     isLoading &&
       (content = (
@@ -22,6 +23,7 @@ const ProductList = () => {
         </div>
       ));
   }
+  /* eslint-enable operator-linebreak */
   /* eslint-disable comma-dangle */
   if (isSuccess) {
     const filteredData = data.filter(

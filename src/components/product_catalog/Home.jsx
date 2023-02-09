@@ -10,6 +10,7 @@ const Home = () => {
   const { data, isLoading, isSuccess } = useGetCategoriesQuery();
 
   let content;
+  /* eslint-disable operator-linebreak */
   {
     isLoading &&
       (content = (
@@ -21,6 +22,7 @@ const Home = () => {
         </div>
       ));
   }
+  /* eslint-enable operator-linebreak */
 
   if (isSuccess) {
     content = (
