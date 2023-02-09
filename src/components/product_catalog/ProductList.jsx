@@ -15,7 +15,10 @@ const ProductList = () => {
   /* eslint-disable operator-linebreak */
 
   isLoading &&
+    /* eslint-enable operator-linebreak */
+    /* eslint-disable   no-unused-expressions */
     (content = (
+      /* eslint-enable   no-unused-expressions */
       <div
         data-testid="spinner"
         className="flex items-center justify-center h-96"
@@ -24,7 +27,6 @@ const ProductList = () => {
       </div>
     ));
 
-  /* eslint-enable operator-linebreak */
   /* eslint-disable comma-dangle */
   if (isSuccess) {
     const filteredData = data.filter(
