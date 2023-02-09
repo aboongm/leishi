@@ -10,22 +10,17 @@ const ProductList = () => {
   const { data, isLoading, isSuccess } = useGetProductsQuery(categoryId);
 
   let content;
-  console.log('deploy');
 
-  /* eslint-disable operator-linebreak */
-
-  isLoading &&
-    /* eslint-enable operator-linebreak */
-    /* eslint-disable   no-unused-expressions */
-    (content = (
+  if (isLoading) {
+    content = (
       <div
-        data-testid="spinner"
-        className="flex items-center justify-center h-96"
+        data-testid="loading-indicator"
+        className="flex items-center justify-center h-96 w-full bg-gray-300"
       >
         <PulseLoader color="#f50057" size={30} />
       </div>
-    ));
-  /* eslint-enable   no-unused-expressions */
+    );
+  }
 
   /* eslint-disable comma-dangle */
   if (isSuccess) {
