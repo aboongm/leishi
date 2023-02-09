@@ -18,7 +18,6 @@ const ProductList = () => {
     /* eslint-enable operator-linebreak */
     /* eslint-disable   no-unused-expressions */
     (content = (
-      /* eslint-enable   no-unused-expressions */
       <div
         data-testid="spinner"
         className="flex items-center justify-center h-96"
@@ -26,6 +25,7 @@ const ProductList = () => {
         <PulseLoader color="#f50057" size={30} />
       </div>
     ));
+  /* eslint-enable   no-unused-expressions */
 
   /* eslint-disable comma-dangle */
   if (isSuccess) {

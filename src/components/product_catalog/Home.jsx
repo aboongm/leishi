@@ -16,7 +16,6 @@ const Home = () => {
     /* eslint-enable operator-linebreak */
     /* eslint-disable   no-unused-expressions */
     (content = (
-      /* eslint-enable  no-unused-expressions */
       <div
         data-testid="loading-indicator"
         className="flex items-center justify-center h-96 w-full bg-gray-300"
@@ -24,6 +23,7 @@ const Home = () => {
         <PulseLoader color="#f50057" size={30} />
       </div>
     ));
+  /* eslint-enable  no-unused-expressions */
 
   if (isSuccess) {
     content = (
